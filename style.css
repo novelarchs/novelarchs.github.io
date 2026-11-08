@@ -4,15 +4,6 @@
   src: url(font/JetBrainsMonoNerdFont-Regular.ttf) format('truetype');
 }
 
-:root {
-  --bg: rgb(0, 10, 20);
-  --text: rgb(255, 255, 255);
-  --subtext: rgb(128, 128, 128);
-  --card: rgb(15, 20, 30);
-  --bgtrans: rgba(0, 10, 20, 0.8);
-  --ambient: rgba(255, 255, 255, 0.5);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,6 +12,16 @@
 }
 
 html {scroll-behavior: smooth;}
+
+/* ---------- Themes ---------- */
+:root {
+  --bg: rgb(0, 10, 20);
+  --text: rgb(255, 255, 255);
+  --subtext: rgb(128, 128, 128);
+  --card: rgb(15, 20, 30);
+  --bgtrans: rgba(0, 10, 20, 0.8);
+  --ambient: rgba(255, 255, 255, 0.5);
+}
 
 body {
   min-height: 100vh;
@@ -39,7 +40,7 @@ body.theme-light {
   --ambient: rgba(128, 128, 128, 0.3);
 }
 
-button, nav, .card, .container-flex {
+button, nav, .card {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -105,29 +106,6 @@ nav a:hover{ color: var(--subtext); }
   background: var(--bgtrans);
 }
 
-#clock {font-size: 4rem;}
-
-/* ---------- About ---------- */
-main {
-  min-height: 100vh;
-  padding-block: 8vh;
-  text-align: center;
-  background: var(--bg);
-}
-
-.container-flex {
-  display: flex;
-  align-items: center;
-  justify-content:flex-start;
-  text-align: left;
-  margin: 2rem 5%;
-  padding: 4rem;
-  gap: 3rem;
-  border-radius: 1rem;
-  border: 1px solid var(--ambient);
-  background: var(--card);
-}
-
 .logo {
   height: 320px;
   border-radius: 50%;
@@ -139,7 +117,15 @@ main {
   box-shadow: 0 0 50px 2px var(--ambient);
 }
 
-/* ---------- Projects ---------- */
+/* ---------- Main ---------- */
+main, section {
+  min-height: 100vh;
+  padding-block: 8vh;
+  text-align: center;
+  background: var(--bg);
+}
+
+/* ---------- Section ---------- */
 .container-grid {
   display: grid;
   grid-template-columns: repeat(3, 400px);
@@ -212,7 +198,7 @@ button:hover {
   pointer-events: none;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Smaller Screen ---------- */
 @media (max-width: 1280px) {
   .container-grid { grid-template-columns: repeat(2, 1fr); }
 }
