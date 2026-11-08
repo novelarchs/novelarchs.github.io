@@ -28,7 +28,7 @@ body {
   font-family: 'Jetbrains Mono Nerd Font', monospace;
   font-size: 1.2rem;
   color: var(--text);
-  background:var(--bg) url(img/mono-bg-01.webp) center / cover fixed;
+  background: var(--bg);
 }
 
 body.theme-light {
@@ -49,6 +49,8 @@ a {
   text-decoration: none;
 }
 
+small {color: var(--subtext);}
+
 /* ---------- Navbar ---------- */
 nav {
   position: fixed;
@@ -68,6 +70,8 @@ nav ul {
 nav li {height: 4rem;}
 
 nav a {
+  font-size: 1rem;
+  color: var(--subtext);
   display: flex;
   align-items: center;
   height: 100%;
@@ -75,7 +79,7 @@ nav a {
   transition: color 0.3s;
 }
 
-nav a:hover{ color: var(--subtext); }
+nav a:hover{ color: var(--text); }
 .navbar li:first-child {margin-right: auto;}
 
 /* ---------- Sidebar ---------- */
@@ -103,8 +107,10 @@ nav a:hover{ color: var(--subtext); }
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: var(--bgtrans);
 }
+
+.title p, .title h1, .title small, .title button {margin: 1rem 0;}
+.title h1 {font-size: 3em;}
 
 .logo {
   height: 320px;
@@ -118,11 +124,17 @@ nav a:hover{ color: var(--subtext); }
 }
 
 /* ---------- Main ---------- */
-main, section {
-  min-height: 100vh;
-  padding-block: 8vh;
-  text-align: center;
-  background: var(--bg);
+
+.main, .section {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 200px;
+}
+
+.main div {
+  margin: 50px auto;
+  padding: 2em;
 }
 
 /* ---------- Section ---------- */
@@ -154,13 +166,12 @@ main, section {
 footer {
   padding: 0 0 100px;
   text-align: center;
-  background: var(--bg);
 }
 
 /* ---------- Buttons & Icons ---------- */
 button {
   padding: 12px;
-  border-radius: 20px;
+  border-radius: 2em;
   border: 1px solid var(--ambient);
   background: var(--card);
   color: var(--text);
@@ -208,10 +219,7 @@ button:hover {
 }
 
 @media (max-width: 720px) {
-  body {
-    font-size: 1rem;
-  }
-
+  body {font-size: 1rem;}
   .navbar li:not(:first-child, :last-child) { display: none; }
   
   .menu-btn {
@@ -220,7 +228,7 @@ button:hover {
     pointer-events: all;
   }
 
-  header {
+  .hero {
     flex-direction: column;
     text-align: center;
     padding-block: 10vh;
@@ -228,12 +236,7 @@ button:hover {
 
   .sidebar li {border-bottom: 1px solid var(--subtext);}
   .home {width:100%;}
-  .pfp {height: 200px;}
-  #clock {font-size: 3rem;}
-  .container-flex {padding: 3rem 1.5rem;}
+  .logo {height: 200px;}
+  .main, .section {padding: 3rem 1.5rem;}
   .container-grid { grid-template-columns : 1fr; }
-}
-
-@media (max-device-width: 720px) {
-  body {background-attachment: scroll;}
 }
