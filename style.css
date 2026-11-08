@@ -129,13 +129,13 @@ main {
 }
 
 .logo {
-  height: 250px;
+  height: 320px;
   border-radius: 50%;
   transition: transform .3s, box-shadow .3s;
 }
 
-.pfp:hover {
-  transform: scale(1.2);
+.logo:hover {
+  transform: translate(-10px, -10px);
   box-shadow: 0 0 50px 2px var(--ambient);
 }
 
