@@ -140,21 +140,6 @@ main {
   box-shadow: 0 0 50px 2px var(--ambient);
 }
 
-.skill-box {
-  list-style-type: none;
-  width: 100%;
-}
-
-.skill-box li {
-  padding: 0.5rem;
-  border-bottom: 3px solid var(--subtext)
-}
-
-.skill-box p {
-  font-size: 1rem;
-  color: var(--subtext)
-}
-
 /* ---------- Projects ---------- */
 .container-grid {
   display: grid;
