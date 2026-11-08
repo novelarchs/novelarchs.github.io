@@ -36,7 +36,8 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Clock program
+// Clock program - Currently disable
+/*
 function updateClock() {
   const now = new Date();
   const hours = now.getHours().toString().padStart(2, 0);
@@ -59,6 +60,7 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+*/
 
 // Scroll button
 window.onscroll = function() {scrollFunction()};
